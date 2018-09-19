@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,6 +29,7 @@ public class PersonalTwitterFeed {
         
         String tweeterName = keyboard.nextLine();
         
+        
         System.out.println("Nice to meet you " + tweeterName + "!");
         System.out.println("Enter your tweets and I will add them to your timeline!");
         
@@ -47,11 +49,25 @@ public class PersonalTwitterFeed {
             System.out.println();
             System.out.println();
             
+            getCurrentTimeStamp();
+            
             if(numTweets < (MAX_NUMBER_TWEETS - 1))
                 System.out.println("Enter your next tweet:");
+            
+            
         }
         
         System.out.println("Your twitter feed is full");
+    }
+    public static String getCurrentTimeStamp(){
+        String timeDate = "EEEEE dd MMMMM yyyy HH:mm:ss";
+        SimpleDateFormat simpleDate = new SimpleDateFormat(timeDate);
+        
+        String pattern = simpleDate.format(new Date());
+        System.out.println(pattern);
+        
+        return timeDate;
+        
     }
     
 }

@@ -36,12 +36,14 @@ public class PersonalTwitterFeed {
         int numTweets = 0;
         
         while(numTweets < (MAX_NUMBER_TWEETS - 1)) {
-            tweets[numTweets] = keyboard.nextLine();
+            tweets[numTweets] = keyboard.nextLine()+ "\n" +getCurrentTimeStamp();
             numTweets++;
+            
             
             System.out.println(tweeterName + "'s Personal Twitter Feed:");
             for(int i = 0; i < numTweets; i++) {
                 System.out.println("- " + tweets[i]);
+                
             }
             
             System.out.println();
@@ -49,7 +51,7 @@ public class PersonalTwitterFeed {
             System.out.println();
             System.out.println();
             
-            getCurrentTimeStamp();
+ 
             
             if(numTweets < (MAX_NUMBER_TWEETS - 1))
                 System.out.println("Enter your next tweet:");
@@ -63,10 +65,8 @@ public class PersonalTwitterFeed {
         String timeDate = "EEEEE dd MMMMM yyyy HH:mm:ss";
         SimpleDateFormat simpleDate = new SimpleDateFormat(timeDate);
         
-        String pattern = simpleDate.format(new Date());
-        System.out.println(pattern);
+        return simpleDate.format(new Date());
         
-        return timeDate;
         
     }
     
